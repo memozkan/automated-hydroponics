@@ -115,3 +115,19 @@ Give a ⭐️ if this project helped you!
 
 Copyright © 2019 [Radzi Ramli](https://github.com/wadzee).<br />
 This project is [MIT](https://github.com/wadzee/automated-hydroponics/blob/master/LICENSE) licensed.
+
+## Python Utilities and API
+
+This repository now includes a `sensor_monitor.py` script for reading serial data from Arduino sensors and posting them to an API. The accompanying `api_server.py` provides a simple REST interface for storing readings in memory.
+
+### Running the API Server
+
+```sh
+pip install flask
+python api_server.py
+```
+
+### Mobile Web Interface
+
+The `mobile/` directory contains a basic mobile-friendly page that fetches the latest sensor values. Run the API server and open `mobile/index.html` in your browser.
+
