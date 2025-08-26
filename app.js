@@ -26,5 +26,16 @@ async function fetchLatest() {
 }
 
 document.getElementById('refresh').addEventListener('click', fetchLatest);
-setInterval(fetchLatest, 5000);
-fetchLatest();
+
+const autoBox = document.getElementById('auto-refresh');
+let autoTimer = null;
+
+autoBox.addEventListener('change', () => {
+  if (autoBox.checked) {
+    fetchLatest();
+    autoTimer = setInterval(fetchLatest, 5000);
+  } else {
+    clearInterval(autoTimer);
+    autoTimer = null;
+  }
+});
