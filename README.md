@@ -132,7 +132,7 @@ pip install flask
 python api_server.py
 ```
 
-### Mobil Web Arayüzü
+### Web Arayüzü
 
-`mobile/` dizini, en son sensör değerlerini getiren temel bir mobil uyumlu sayfa içerir. API sunucusunu çalıştırın ve tarayıcınızda `mobile/index.html` dosyasını açın.
+Depo kök dizinindeki `index.html` dosyası, en son sensör değerlerini kartlar hâlinde gösteren mobil uyumlu bir sayfa sunar. Sayfa ışık, pH ve EC değerlerini ve zaman damgasını otomatik olarak her 5 saniyede bir yeniler. API sunucusunu çalıştırın ve tarayıcınızda `index.html` dosyasını açın. Yenile düğmesi ile verileri manuel olarak da güncelleyebilirsiniz.
 
