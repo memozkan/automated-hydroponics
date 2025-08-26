@@ -1,133 +1,138 @@
 # automated-hydroponics 🌱
-> Automated Hydroponic System with Remote Monitoring
+> Uzaktan İzleme ile Otomatik Hidroponik Sistem
 
 <p>
   <a href="https://github.com/wadzee/automated-hydroponics/blob/master/LICENSE">
-    <img alt="License: Apache 2.0" src="https://img.shields.io/badge/License-MIT-yellow.svg" target="_blank" />
+    <img alt="Lisans: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" target="_blank" />
   </a>
 </p>
 
-**Short description** :
+**Kısa açıklama** :
 
-  > This project focuses on indoor growing using hydroponic technique.
-  > As such, most of the feature/requirement develop is catered for it.
-  > Currently, the system will be able to monitor current PH, EC and ambient lighting.
-  > For the time being, i will not be able to upload some of the additional code as it is my Final Year Project. Will upload the full content when its ready. Cheers
+  > Bu proje hidroponik teknik kullanarak iç mekanda bitki yetiştirmeye odaklanır.
+  > Bu nedenle geliştirilen çoğu özellik/gereksinim bu tekniğe yöneliktir.
+  > Sistem şu anda mevcut pH, EC ve ortam ışığını izleyebilmektedir.
+  > Şimdilik bitirme projem olduğundan bazı ek kodları yükleyemiyorum. Hazır olduğunda tüm içeriği paylaşacağım. Teşekkürler.
 
-# Features!
+# Özellikler!
 
-  - Ability to specify type of plant that is going to be grown using the system (Lettuce, Kale, etc..)
-  - Automated PH & EC Dosing Mechanism
-  - Current Plant Condition Monitoring in a friendly web interface
-  - Automatically Turn On/Off light source depending on current ambient lighting
-  
-![p](https://github.com/wadzee/automated-hydroponics/blob/master/features.PNG)
+  - Sistem ile yetiştirilecek bitki türünü belirtme (Marul, Kale vb.)
+  - Otomatik pH ve EC Dozlama Mekanizması
+  - Kullanıcı dostu web arayüzünde anlık bitki durumu izleme
+  - Ortam ışığına göre ışık kaynağını otomatik Aç/Kapat
 
-When viewed from website 
+![p](features.PNG)
 
-![p](https://github.com/wadzee/automated-hydroponics/blob/master/monitor.PNG)
+Web sitesinden görüntülendiğinde
 
-**Important Note**:
-  - Some code/features is missing from the repo as it is an ongoing project for my FYP course
+![p](monitor.PNG)
+
+**Önemli Not**:
+  - FYP (Final Year Project) kapsamında devam eden bir proje olduğu için bazı kod/özellikler depoda eksiktir.
 
 # Demo
 
-LDR value update in **Real Time** as soon as the LDR sensor is covered with blackbox. (works with other sensors too)
+LDR sensörü siyah bir kutu ile kapatıldığında LDR değeri **Gerçek Zamanlı** olarak güncellenir. (diğer sensörlerde de çalışır)
 
-![p](https://github.com/wadzee/automated-hydroponics/blob/master/ldrdemo.gif)
+![p](ldrdemo.gif)
 
-## Hardware Requirements
+## Donanım Gereksinimleri
 
-This project uses the following hardware, you may use your own if its compatible.
+Bu projede aşağıdaki donanımlar kullanılmıştır, uyumlu ise kendi donanımlarınızı da kullanabilirsiniz.
 
-| Hardware | Links |
+| Donanım | Bağlantılar |
 | ------ | ------ |
 | Arduino Uno R3 | [Amazon](https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6) |
 | Raspberry Pi 3B+ | [Amazon](https://www.amazon.com/ELEMENT-Element14-Raspberry-Pi-Motherboard/dp/B07BDR5PDW/ref=sr_1_3?crid=2MHYPOB2GXUSW&keywords=raspberry+pi+3+b%2B&qid=1561152106&s=electronics&sprefix=raspberry+pi+3%2Celectronics%2C456&sr=1-3) |
-| PH Sensor | [AliExpress](https://www.aliexpress.com/item/32805675619.html?spm=a2g0s.9042311.0.0.468f4c4dS0tnBH) |
-| EC Sensor | [DIY](https://hackaday.io/project/7008-fly-wars-a-hackers-solution-to-world-hunger/log/24646-three-dollar-ec-ppm-meter-arduino) |
-| LDR| [Amazon](https://www.amazon.com/10pcs-Dependent-Resistor-Photoresistor-GL5528/dp/B00XDT8KI4) |
-| Relay | [Amazon](https://www.amazon.com/JBtek-Channel-Module-Arduino-Raspberry/dp/B00KTEN3TM/ref=sr_1_3?keywords=4+channel+relay&qid=1561157309&s=gateway&sr=8-3) |
-| Pump | [Amazon](https://www.amazon.com/Gikfun-Submersible-Fountain-Aquarium-EK1893/dp/B07BHD6KXS/ref=pd_lpo_sbs_60_t_0?_encoding=UTF8&psc=1&refRID=TQYTT601T1NQPXQKMPNE) |
+| PH Sensörü | [AliExpress](https://www.aliexpress.com/item/32805675619.html?spm=a2g0s.9042311.0.0.468f4c4dS0tnBH) |
+| EC Sensörü | [DIY](https://hackaday.io/project/7008-fly-wars-a-hackers-solution-to-world-hunger/log/24646-three-dollar-ec-ppm-meter-arduino) |
+| LDR | [Amazon](https://www.amazon.com/10pcs-Dependent-Resistor-Photoresistor-GL5528/dp/B00XDT8KI4) |
+| Röle | [Amazon](https://www.amazon.com/JBtek-Channel-Module-Arduino-Raspberry/dp/B00KTEN3TM/ref=sr_1_3?keywords=4+channel+relay&qid=1561157309&s=gateway&sr=8-3) |
+| Pompa | [Amazon](https://www.amazon.com/Gikfun-Submersible-Fountain-Aquarium-EK1893/dp/B07BHD6KXS/ref=pd_lpo_sbs_60_t_0?_encoding=UTF8&psc=1&refRID=TQYTT601T1NQPXQKMPNE) |
 
-## Fritzing Sketches
+## Fritzing Çizimleri
 
-Drawing for Hardware Connection. You may get the fritzing file [here](https://github.com/wadzee/automated-hydroponics/blob/master/Fritzing%20Sketches.fzz)
+Donanım bağlantıları için çizim. Fritzing dosyasını [buradan](https://github.com/wadzee/automated-hydroponics/blob/master/Fritzing%20Sketches.fzz) edinebilirsiniz.
 
-![p](https://github.com/wadzee/automated-hydroponics/blob/master/Sketches.png)
+![p](Sketches.png)
 
-## Pre-requiste
+## Ön Koşullar
 
-requires Raspberry Pi 3 running raspbian.
+Raspbian çalıştıran Raspberry Pi 3 gereklidir.
 
-requires [Node-RED](https://nodered.org/)
+[Node-RED](https://nodered.org/) gerektirir
 
-requires [Arduino IDE](https://www.arduino.cc/)
+[Arduino IDE](https://www.arduino.cc/) gerektirir
 
-Arduino Uno connected to Raspberry Pi via USB connection.
+Arduino Uno, USB bağlantısı ile Raspberry Pi'ye bağlanmalıdır.
 
-![p](https://github.com/wadzee/automated-hydroponics/blob/master/how%20to%20connect.PNG)
+![p](how%20to%20connect.PNG)
 
-## Installation
+## Kurulum
 
 ### Node-RED
-Open Terminal and run the following code to install Node-Red
+Node-RED'i kurmak için Terminal açıp aşağıdaki komutu çalıştırın
 
 ```sh
 bash <(curl -sL https://raw.githubusercontent.com/node-red/raspbian-deb-package/master/resources/update-nodejs-and-nodered)
 ```
 
 ### Arduino IDE
-Open Terminal and run the following code to install Arduino IDE
+Arduino IDE'yi kurmak için Terminal açıp aşağıdaki komutları çalıştırın
 
 ```sh
 sudo apt-get update && sudo apt-get upgrade
 sudo apt-get install arduino
 ```
-## Running
 
-Open Terminal and run the following code to start Node-RED
+## Çalıştırma
+
+Node-RED'i başlatmak için Terminal'de aşağıdaki komutu çalıştırın
+
 ```sh
 node-red-start
 ```
-Verify the node-red is running by navigating to the default server address in your preferred browser 
+
+Varsayılan sunucu adresine tarayıcınızla giderek Node-RED'in çalıştığını doğrulayın
+
 ```sh
 127.0.0.1:1880
 ```
-Import this [file](https://github.com/wadzee/automated-hydroponics/blob/master/flows.json) into Node-RED dashboard. 
 
-**Note**
-- Change the USB port to the correct port (the one where your Arduino is connected to).
-- Be sure to swap out the `Sensor Data` file address to your own address to avoid conflict.
+Bu [dosyayı](https://github.com/wadzee/automated-hydroponics/blob/master/flows.json) Node-RED panosuna içe aktarın.
+
+**Not**
+- USB portunu Arduino'nuzun bağlı olduğu doğru porta değiştirin.
+- Çakışmayı önlemek için `Sensor Data` dosya adresini kendi adresinizle değiştirin.
 ***
 
-## Author
+## Yazar
 
 👤 **Radzi Ramli**
 
-* Github: [@wadzee](https://github.com/wadzee)
+* GitHub: [@wadzee](https://github.com/wadzee)
 
-## Show your support
+## Destek Olun
 
-Give a ⭐️ if this project helped you!
+Bu proje size yardımcı olduysa bir ⭐️ verin!
 
-## 📝 License
+## 📝 Lisans
 
-Copyright © 2019 [Radzi Ramli](https://github.com/wadzee).<br />
-This project is [MIT](https://github.com/wadzee/automated-hydroponics/blob/master/LICENSE) licensed.
+Telif Hakkı © 2019 [Radzi Ramli](https://github.com/wadzee).<br />
+Bu proje [MIT](https://github.com/wadzee/automated-hydroponics/blob/master/LICENSE) lisanslıdır.
 
-## Python Utilities and API
+## Python Araçları ve API
 
-This repository now includes a `sensor_monitor.py` script for reading serial data from Arduino sensors and posting them to an API. The accompanying `api_server.py` provides a simple REST interface for storing readings in memory.
+Bu depo artık Arduino sensörlerinden seri verileri okuyup bir API'ye göndermek için `sensor_monitor.py` betiğini içeriyor. Buna eşlik eden `api_server.py` dosyası, okumaları bellekte saklamak için basit bir REST arayüzü sağlar.
 
-### Running the API Server
+### API Sunucusunu Çalıştırma
 
 ```sh
 pip install flask
 python api_server.py
 ```
 
-### Mobile Web Interface
+### Mobil Web Arayüzü
 
-The `mobile/` directory contains a basic mobile-friendly page that fetches the latest sensor values. Run the API server and open `mobile/index.html` in your browser.
+`mobile/` dizini, en son sensör değerlerini getiren temel bir mobil uyumlu sayfa içerir. API sunucusunu çalıştırın ve tarayıcınızda `mobile/index.html` dosyasını açın.
 

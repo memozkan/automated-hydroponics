@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Read hydroponic sensor data from a serial port and optionally POST to a remote server.
+"""Seri porttan hidroponik sensör verilerini okuyup isteğe bağlı olarak uzak bir sunucuya POST eder.
 
-This script expects the Arduino sketch to print space-separated values in the
-order: N light_value ph_value ec_value. It will parse the data, display it on
-stdout and, if an HTTP endpoint is provided, send the measurements as JSON.
+Bu betik, Arduino skeç'inin `N light_value ph_value ec_value` sırasıyla boşlukla ayrılmış
+değerler yazmasını bekler. Verileri ayrıştırır, stdout'a gösterir ve bir HTTP uç noktası
+sağlanmışsa ölçümleri JSON olarak gönderir.
 """
 import argparse
 import json
@@ -14,7 +14,7 @@ from typing import Optional
 try:
     import serial  # type: ignore
 except Exception:  # pragma: no cover
-    serial = None  # pyserial may not be installed on this system
+    serial = None  # pyserial bu sistemde kurulu olmayabilir
 
 try:
     import requests  # type: ignore
@@ -24,7 +24,7 @@ except Exception:  # pragma: no cover
 
 def read_loop(port: str, baud: int, endpoint: Optional[str]) -> None:
     if serial is None:
-        raise RuntimeError("pyserial is required to read from the serial port")
+        raise RuntimeError("seri porttan okumak için pyserial gereklidir")
 
     with serial.Serial(port, baudrate=baud, timeout=1) as ser:
         while True:
@@ -41,17 +41,17 @@ def read_loop(port: str, baud: int, endpoint: Optional[str]) -> None:
                 try:
                     requests.post(endpoint, json=data, timeout=5)
                 except Exception as exc:  # pragma: no cover
-                    print(f"Failed to post data: {exc}", file=sys.stderr)
+                    print(f"Veri gönderilemedi: {exc}", file=sys.stderr)
             time.sleep(1)
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Monitor hydroponic sensor data")
-    parser.add_argument("--port", default="/dev/ttyUSB0", help="Serial port path")
-    parser.add_argument("--baud", type=int, default=9600, help="Serial baud rate")
+    parser = argparse.ArgumentParser(description="Hidroponik sensör verilerini izle")
+    parser.add_argument("--port", default="/dev/ttyUSB0", help="Seri port yolu")
+    parser.add_argument("--baud", type=int, default=9600, help="Seri baud hızı")
     parser.add_argument(
         "--endpoint",
-        help="HTTP endpoint to post JSON data (optional)",
+        help="JSON verisini POST etmek için HTTP uç noktası (isteğe bağlı)",
     )
     args = parser.parse_args()
     try:
@@ -62,3 +62,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+

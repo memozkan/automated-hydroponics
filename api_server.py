@@ -1,3 +1,5 @@
+"""Basit bir sensör okuma API sunucusu."""
+
 import json
 from datetime import datetime
 from typing import List, Dict
@@ -6,15 +8,15 @@ from flask import Flask, request, jsonify
 
 app = Flask(__name__)
 
-# In-memory store for sensor readings
+# Sensör okumalarını bellekte tutan yapı
 readings: List[Dict[str, str]] = []
 
 
 @app.route('/api/readings', methods=['POST'])
 def add_reading():
-    """Add a new sensor reading.
+    """Yeni bir sensör okuması ekle.
 
-    Expected JSON payload::
+    Beklenen JSON yükü::
         {
             "light": <int>,
             "ph": <float>,
@@ -34,15 +36,22 @@ def add_reading():
 
 @app.route('/api/readings', methods=['GET'])
 def list_readings():
-    """Return all sensor readings in chronological order."""
+    """Tüm sensör okumalarını kronolojik olarak döndür."""
     return jsonify(readings)
+
+
+@app.route('/api/readings', methods=['DELETE'])
+def clear_readings():
+    """Tüm sensör okumalarını temizle."""
+    readings.clear()
+    return '', 204
 
 
 @app.route('/api/readings/latest', methods=['GET'])
 def latest_reading():
-    """Return the most recent sensor reading."""
+    """En son sensör okumasını döndür."""
     if not readings:
-        return jsonify({'error': 'no readings yet'}), 404
+        return jsonify({'error': 'henüz veri yok'}), 404
     return jsonify(readings[-1])
 
 

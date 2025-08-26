@@ -2,7 +2,7 @@ async function fetchLatest() {
   try {
     const res = await fetch('/api/readings/latest');
     if (!res.ok) {
-      document.getElementById('reading').innerText = 'No data';
+      document.getElementById('reading').innerText = 'Veri yok';
       return;
     }
     const data = await res.json();

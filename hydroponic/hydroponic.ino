@@ -8,7 +8,7 @@ const int ledPin = 13;
 const int ldrPin = A1;
 const int ch = 4;
 const int relay[]={2,3,4,5};
-float ecLevel = 1.48; //pre-set value for EC. EC Sensor not working currently.
+float ecLevel = 1.48; //EC için önceden belirlenmiş değer. EC sensörü şu anda çalışmıyor.
 
 float PHSensor (){
   int measure = analogRead(ph_pin);
@@ -55,7 +55,7 @@ int lightSensor(){
 void phLCD(float phvalue){
   lcd.clear();
   lcd.setCursor(0,0);
-  lcd.print("PH:");
+  lcd.print("pH:");
   lcd.print(phvalue);
   lcd.setCursor(8,0);
   lcd.print("EC:");
@@ -78,27 +78,27 @@ void relayLCD(float phvalue, int lightvalue){
   int pumpNo = relayPHEC(phvalue, ecLevel);
   int light = relayLight(lightvalue);
   if(pumpNo != 0){
-    lcd.print("PUMP");
+    lcd.print("POMPA");
     lcd.print(pumpNo);
-    lcd.print(" turned ON");
+    lcd.print(" açıldı");
     delay(2000);
     offRelay();
     lcd.clear();
     phLCD(phvalue);
-    lcd.print("PUMP");
+    lcd.print("POMPA");
     lcd.print(pumpNo);
-    lcd.print(" turned OFF");
+    lcd.print(" kapandı");
     delay(2000);
   }
   if(light == 1){
     lcd.clear();
     phLCD(phvalue);
-    lcd.print("Light : ON");
+    lcd.print("Işık : AÇIK");
   }
   if(light == 2){
     lcd.clear();
     phLCD(phvalue);
-    lcd.print("Light : OFF");
+    lcd.print("Işık : KAPALI");
   }
 }
 
